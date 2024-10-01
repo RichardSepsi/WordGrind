@@ -13,10 +13,11 @@
 .home-nav-container{
     display: flex;
     flex-direction: row;
-    height: 100px;
+    height: 80px;
     width: 900px;
     background-color: 0;
     padding: 25px;
+    padding-top: 5px;
 }
 .home-stats-container{
     display: flex;
@@ -32,8 +33,8 @@
     align-items: center;
     border-radius: 6px;
     height: 100%;
-    outline: 4px solid #4d4d4d;
-    background-color: hsla(0, 0%, 20%, 0.7);
+    outline: 3px solid #4d4d4d;
+    background-color: #292929;
     padding: 0 16px;
     font-weight: 500;
     font-size: 18px;
@@ -41,11 +42,23 @@
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none;
-    backdrop-filter: blur(10px);
     transition-duration: 100ms;
+    position: relative;
 }
 .button:hover{
     background-color: hsla(0, 0%, 30%, 1);
     outline: 4px solid hsla(0, 0%, 30%, 0.7);
+    transition-duration: 100ms;
+}
+.button-small-image{
+    display: flex;
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    top: -45px;
+    transition-duration: 100ms;
+}
+.button:hover .button-small-image{
+    filter: brightness(250%);
     transition-duration: 100ms;
 }
