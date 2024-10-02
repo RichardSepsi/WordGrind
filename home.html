@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/general.css">
     <link rel="stylesheet" href="assets/home.css">
     <link rel="stylesheet" href="assets/overlay.css">
+    <script defer src="wanakana.js"></script>
     <script defer src="script.js"></script>
     <script defer src="game.js"></script>
     <title>WordGrind</title>
@@ -88,24 +89,28 @@
                 <span style="color: #969696; font-size: 28px; font-weight: 500; width: 130px; text-align: left;" id="stopwatch-num">00:00:00</span>
             </div>
             <div style="display: flex; flex-direction: row;">
-                <span style="font-weight: 500; font-size: 22px;"><span style="color: hsl(0, 0%, 41%);">正解:</span> <span style="font-family: Inter;">30</span></span>
+                <span style="font-weight: 500; font-size: 22px;"><span style="color: hsl(0, 0%, 41%);">正解:</span><span style="font-family: Inter;" id="correct-in-session">0</span></span>
                 <div style="width: 16px;"></div>
-                <span style="font-weight: 500; font-size: 22px;"><span style="color: hsl(0, 0%, 41%);">不正解:</span> <span style="font-family: Inter;">110</span></span>
+                <span style="font-weight: 500; font-size: 22px;"><span style="color: hsl(0, 0%, 41%);">不正解:</span><span style="font-family: Inter;" id="wrong-in-session">0</span></span>
             </div>
         </div>
         <div class="ovl-main">
             <div class="ovl-card-front" id="ovl-card-front">簡単</div>
-            <div class="ovl-card-back" id="ovl-card-back">simple, easy, uncomplicated</div>
-            <div class="ovl-card-answer" id="ovl-card-answer">かんたん</div>
-            <div class="ovl-card-hint" id="ovl-card-hint">no hint :/</div>
+            <div class="ovl-card-back" id="ovl-card-back" style="opacity: 0; pointer-events: none;">simple, easy, uncomplicated</div>
+            <div class="ovl-card-answer" id="ovl-card-answer" style="opacity: 0; pointer-events: none;">かんたん</div>
+            <div class="ovl-card-hint" id="ovl-card-hint" style="opacity: 0; pointer-events: none;">no hint :/</div>
         </div>
         <div class="ovl-bottom">
             <div style="height: 50px;">
-                <div class="button">ヒント見せる</div>
+                <div class="button" onclick="showhint()">ヒント見せる</div>
             </div>
-            <div class="input-field" id="input-field">
-                <input placeholder="ここにタイプする" class="ovl-input" name="main-input" tabindex="1" id="main-input" onfocus="intfoc()" onblur="intblr()">
-                <img src="assets/arrow-right2.svg" draggable="false" width="30" height="30" class="ovl-input-arrow" onclick="pickcard()">
+            <div style="display: flex; flex-direction: row; height: 64px;">
+                <div class="input-field" id="input-field">
+                    <input placeholder="ここにタイプする" class="ovl-input" name="main-input" tabindex="1" id="main-input" onfocus="intfoc()" onblur="intblr()" onkeyup="checkans()">
+                    <!--<img src="assets/arrow-right2.svg" draggable="false" width="30" height="30" class="ovl-input-arrow" onclick="pickcard()">-->
+                </div>
+                <div style="width: 16px;"></div>
+                <div class="button disabled" id="nextbutton" onclick="pickcard()"><div class="button-small-image3"><img src="assets/arrow-right2.svg" draggable="false"></div></div>
             </div>
             <div style="height: 50px; margin-right: 12px;">
                 <div class="button">バグを報告する<div class="button-small-image2"><img src="assets/arrow-right.svg" draggable="false"></div></div>
