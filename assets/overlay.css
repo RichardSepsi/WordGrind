@@ -80,7 +80,7 @@
 .input-field{
     display: flex;
     border-radius: 6px;
-    width: 355px;
+    width: 340px;
     height: 64px;
     background-color: hsl(0, 0%, 16%);
     outline: 3px solid hsla(0, 0%, 30%, 0.5);

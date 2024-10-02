@@ -21,9 +21,9 @@
         <div style="width: 30px;"></div>
         <div class="home-content">
             <div class="home-nav-container">
-                <div class="button">セットを管理する<div class="button-small-image"><img src="assets/menu.svg" draggable="false"></div></div>
+                <div class="button">セット管理する<div class="button-small-image"><img src="assets/menu.svg" draggable="false"></div></div>
                 <div style="width: 20px;"></div>
-                <div class="button">セットを追加する<div class="button-small-image"><img src="assets/plus.svg" draggable="false"></div></div>
+                <div class="button">セット加える<div class="button-small-image"><img src="assets/plus.svg" draggable="false"></div></div>
                 <div style="width: 20px;"></div>
                 <div class="button">オプション<div class="button-small-image"><img src="assets/settings.svg" draggable="false"></div></div>
                 <div style="width: 20px;"></div>
@@ -64,7 +64,7 @@
                 <div style="width: 16px;"></div>
                 <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">連続:</span> <span style="font-family: Inter;">7</span></span>
             </div>
-            <div style="height: 5px; width: 600px; background-color: #292929; margin-left: 25px;"></div>
+            <div style="height: 5px; width: 560px; background-color: #292929; margin-left: 25px;"></div>
             <div style="height: 20px;"></div>
             <div class="home-nav-container">
                 <a class="gen-link" href="https://github.com/RichardSepsi/WordGrind" draggable="false"><div class="button">GitHub<div class="button-small-image2"><img src="assets/arrow-right.svg" draggable="false"></div></div></a>
@@ -86,7 +86,7 @@
             </div>
             <div style="display: flex; flex-direction: row;">
                 <div style="width: 123px;"></div>
-                <span style="color: #969696; font-size: 28px; font-weight: 500; width: 130px; text-align: left;" id="stopwatch-num">00:00:00</span>
+                <span style="position: absolute; color: #969696; font-size: 28px; font-weight: 500; width: 130px; text-align: left; top: 38px; left: calc(50% - 65px);" id="stopwatch-num">00:00:00</span>
             </div>
             <div style="display: flex; flex-direction: row;">
                 <span style="font-weight: 500; font-size: 22px;"><span style="color: hsl(0, 0%, 41%);">正解:</span><span style="font-family: Inter;" id="correct-in-session">0</span></span>
@@ -101,19 +101,22 @@
             <div class="ovl-card-hint" id="ovl-card-hint" style="opacity: 0; pointer-events: none;">no hint :/</div>
         </div>
         <div class="ovl-bottom">
-            <div style="height: 50px;">
+            <div style="height: 50px; display: flex; flex-direction: row;">
                 <div class="button" onclick="showhint()">ヒント見せる</div>
+                <div style="width: 68px;"></div>
             </div>
-            <div style="display: flex; flex-direction: row; height: 64px;">
+            <div style="display: flex; flex-direction: row; height: 64px; position: relative;">
                 <div class="input-field" id="input-field">
                     <input placeholder="ここにタイプする" class="ovl-input" name="main-input" tabindex="1" id="main-input" onfocus="intfoc()" onblur="intblr()" onkeyup="checkans()">
                     <!--<img src="assets/arrow-right2.svg" draggable="false" width="30" height="30" class="ovl-input-arrow" onclick="pickcard()">-->
                 </div>
+                <div style="position: absolute; height: 50px; top: -66px; width: 150px;" class="button" onclick="showhint()">答え見せる</div>
+                <div style="position: absolute; height: 50px; top: -66px; width: 174px; left: 166px;" class="button" onclick="showhint()">カードめくる</div>
                 <div style="width: 16px;"></div>
                 <div class="button disabled" id="nextbutton" onclick="pickcard()"><div class="button-small-image3"><img src="assets/arrow-right2.svg" draggable="false"></div></div>
             </div>
             <div style="height: 50px; margin-right: 12px;">
-                <div class="button">バグを報告する<div class="button-small-image2"><img src="assets/arrow-right.svg" draggable="false"></div></div>
+                <a class="gen-link" href="https://github.com/RichardSepsi/WordGrind/issues/new" draggable="false"><div class="button">バグを報告する<div class="button-small-image2"><img src="assets/arrow-right.svg" draggable="false"></div></div></a>
             </div>
         </div>
     </div>
