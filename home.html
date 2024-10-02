@@ -107,13 +107,13 @@
             </div>
             <div style="display: flex; flex-direction: row; height: 64px; position: relative;">
                 <div class="input-field" id="input-field">
-                    <input placeholder="ここにタイプする" class="ovl-input" name="main-input" tabindex="1" id="main-input" onfocus="intfoc()" onblur="intblr()" onkeyup="checkans()">
+                    <input placeholder="ここにタイプする" class="ovl-input" name="main-input" tabindex="1" id="main-input" onfocus="intfoc()" onblur="intblr()" onkeyup="checkans()"autocomplete="off">
                     <!--<img src="assets/arrow-right2.svg" draggable="false" width="30" height="30" class="ovl-input-arrow" onclick="pickcard()">-->
                 </div>
-                <div style="position: absolute; height: 50px; top: -66px; width: 150px;" class="button" onclick="showhint()">答え見せる</div>
-                <div style="position: absolute; height: 50px; top: -66px; width: 174px; left: 166px;" class="button" onclick="showhint()">カードめくる</div>
+                <div style="position: absolute; height: 50px; top: -66px; width: 150px;" class="button" onclick="showanswer()">答え見せる</div>
+                <div style="position: absolute; height: 50px; top: -66px; width: 174px; left: 166px;" class="button" onclick="showback()">カードめくる</div>
                 <div style="width: 16px;"></div>
-                <div class="button disabled" id="nextbutton" onclick="pickcard()"><div class="button-small-image3"><img src="assets/arrow-right2.svg" draggable="false"></div></div>
+                <div class="button disabled" id="nextbutton" onclick="nextbutton()"><div class="button-small-image3"><img src="assets/arrow-right2.svg" draggable="false"></div></div>
             </div>
             <div style="height: 50px; margin-right: 12px;">
                 <a class="gen-link" href="https://github.com/RichardSepsi/WordGrind/issues/new" draggable="false"><div class="button">バグを報告する<div class="button-small-image2"><img src="assets/arrow-right.svg" draggable="false"></div></div></a>

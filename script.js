@@ -1,4 +1,5 @@
 var deckdata;
+
 fetch ("data.json")
     .then(response => response.json())
     .then(deckdt => deckdata = deckdt)

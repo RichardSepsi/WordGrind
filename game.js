@@ -46,6 +46,29 @@ function initgame(){
     elapsedtime = 0;
     startime = Date.now() - elapsedtime
     timer = setInterval(updatewatch, 10);
+    document.addEventListener('keypress', enterpress);
+    pickcard()
+}
+
+function enterpress(e){
+    if (e.key === 'Enter') {
+        showanswer()
+    }
+}
+function enterpress2(e){
+    if (e.key === 'Enter') {
+        nextbutton()
+    }
+}
+
+function nextbutton(){
+    document.getElementById("nextbutton").setAttribute("class", "button disabled")
+    document.getElementById("input-field").style.backgroundColor = "hsla(0, 0%, 16%, 1)"
+    document.getElementById("input-field").style.outline = "3px solid hsla(0, 0%, 30%, 0.5)"
+    document.getElementById("input-field").style.pointerEvents = "all"
+    document.getElementById("main-input").setAttribute("placeholder", "ここにタイプする")
+    document.removeEventListener('keypress', enterpress2);
+    document.addEventListener('keypress', enterpress);
     pickcard()
 }
 
@@ -72,8 +95,6 @@ function pickcard(){
     document.getElementById("ovl-card-back").innerHTML = deckdata[deckname][cardname].back
     document.getElementById("ovl-card-answer").innerHTML = deckdata[deckname][cardname].answer
     document.getElementById("ovl-card-hint").innerHTML = deckdata[deckname][cardname].hint
-
-    document.getElementById("nextbutton").setAttribute("class", "button disabled")
 }
 function checkans(){
     console.log("changed")
@@ -108,6 +129,14 @@ function hideback(){
 function showanswer(){
     document.getElementById("ovl-card-answer").style.opacity = "1"
     document.getElementById("ovl-card-answer").style.pointerEvents = "all"
+    document.getElementById("nextbutton").setAttribute("class", "button")
+    document.getElementById("input-field").style.backgroundColor = "hsla(0, 0%, 16%, 0.75)"
+    document.getElementById("input-field").style.outline = "3px solid hsla(0, 56%, 48%, 1)"
+    document.getElementById("input-field").style.pointerEvents = "none"
+    document.getElementById("main-input").setAttribute("placeholder", "不正解")
+    document.getElementById("main-input").value = ""
+    document.removeEventListener('keypress', enterpress);
+    document.addEventListener('keypress', enterpress2);
 }
 function hideanswer(){
     document.getElementById("ovl-card-answer").style.opacity = "0"
