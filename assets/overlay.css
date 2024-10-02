@@ -1,0 +1,110 @@
+.overlay-container{
+    position: absolute;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: hsl(0, 0%, 10%);
+    flex-direction: column;
+    transition-duration: 100ms;
+}
+#overlay-container{
+    opacity: 0;
+    pointer-events: none;
+}
+.ovl-top-bar{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+}
+.exit-button{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition-duration: 100ms;
+}
+.exit-button:hover{
+    filter: brightness(170%);
+    transition-duration: 100ms;
+}
+.ovl-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 240px);
+    flex-direction: column;
+}
+.ovl-card-front{
+    font-size: 60px;
+    font-weight: 300;
+    color: #e6e6e6;
+    
+}
+.ovl-card-back{
+    height: 30px;
+    font-size: 22px;
+    color: #cccccc;
+    align-items: center;
+    margin-top: 6px;
+}
+.ovl-card-answer{
+    height: 30px;
+    font-size: 22px;
+    color: #cccccc;
+    align-items: center;
+    margin-top: 6px;
+}
+.ovl-card-hint{
+    height: 30px;
+    font-size: 22px;
+    color: #cccccc;
+    align-items: center;
+    margin-top: 6px;
+}
+.ovl-bottom{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    margin-bottom: 14px;
+    /*background-color: #666;*/
+}
+.input-field{
+    display: flex;
+    border-radius: 6px;
+    width: 355px;
+    height: 64px;
+    background-color: hsl(0, 0%, 16%);
+    outline: 3px solid hsla(0, 0%, 30%, 0.5);
+    position: relative;
+    transition-duration: 100ms;
+}
+.ovl-input{
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    padding-left: 20px;
+    font-size: 20px;
+    color: #e6e6e6;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: NotoJP, Inter;
+    height: 100%;
+}
+.ovl-input-arrow{
+    height: 100%;
+    margin-right: 10px;
+    transition-duration: 100ms;
+}
+.ovl-input:focus + .ovl-input-arrow{
+    filter: brightness(150%);
+    transition-duration: 100ms;
+}

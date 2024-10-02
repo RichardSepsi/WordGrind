@@ -10,6 +10,7 @@
 .home-content{
     display: flex;
     flex-direction: column;
+    justify-content: end;
 }
 .home-nav-container{
     display: flex;
@@ -154,4 +155,8 @@
 .big-button:hover .big-button-small-image{
     filter: brightness(250%);
     transition-duration: 100ms;
+}
+.gen-link{
+    text-decoration: none;
+    color: #e6e6e6;
 }
