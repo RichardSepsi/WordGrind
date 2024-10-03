@@ -37,8 +37,6 @@ function expanddecks(){
 }
 
 // Close the dropdown when clicking outside
-
-
 function closeclickout(){
     if (isClickOutsideDropdown(event)) {
         closedecks()
