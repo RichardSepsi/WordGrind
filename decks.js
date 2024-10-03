@@ -33,6 +33,20 @@ function expanddecks(){
     document.getElementById("arrow-down-img").style.marginTop = "0px"
     document.getElementById("arrow-down-img").style.marginBottom = "2px"
     document.getElementById("home-selector-container").setAttribute("onClick", "closedecks()")
+    document.addEventListener('click', closeclickout);
+}
+
+// Close the dropdown when clicking outside
+
+
+function closeclickout(){
+    if (isClickOutsideDropdown(event)) {
+        closedecks()
+    }
+}
+// Function to check if the clicked target is outside the dropdown
+function isClickOutsideDropdown(event) {
+    return !document.getElementById("selector-wrapper").contains(event.target);
 }
 
 function setdecks(id1){
@@ -52,4 +66,5 @@ function closedecks(){
     document.getElementById("arrow-down-img").style.marginTop = "2px"
     document.getElementById("arrow-down-img").style.marginBottom = "0px"
     document.getElementById("home-selector-container").setAttribute("onClick", "expanddecks()")
+    document.removeEventListener('click', closeclickout);
 }

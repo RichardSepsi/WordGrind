@@ -211,6 +211,6 @@
     pointer-events: none;
     transition-duration: 100ms;
     max-height: 400px;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
