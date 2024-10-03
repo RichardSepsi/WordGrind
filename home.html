@@ -12,6 +12,7 @@
     <script defer src="wanakana.js"></script>
     <script defer src="script.js"></script>
     <script defer src="game.js"></script>
+    <script defer src="decks.js"></script>
     <title>WordGrind</title>
 </head>
 <body id="body">
@@ -40,18 +41,23 @@
             </div>
             <div style="height: 32px;"></div>
             <div class="home-center-container">
-                <div class="home-selector-container">
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                        <span style="font-size: 28px; font-weight: 600; color: #969696; padding-left: 23px; pointer-events: none;" id="id-deck-name">漢字単語</span>
-                        <span style="font-size: 20px; font-weight: 600; color: #696969; padding-bottom: 1px; padding-left: 23px; pointer-events: none;">#01</span>
+                <div style="position: relative;" id="selector-wrapper">
+                    <div class="home-selector-container" id="home-selector-container" onclick="expanddecks()">
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <span style="font-size: 28px; font-weight: 600; color: #969696; padding-left: 23px; pointer-events: none;" id="id-deck-name">漢字単語</span>
+                            <span style="font-size: 20px; font-weight: 600; color: #696969; padding-bottom: 1px; padding-left: 23px; pointer-events: none;" id="id-deck-num">#01</span>
+                        </div>
+                        <div class="expand-button" id="expand-button"><img src="assets/arrow-down.svg" draggable="false" id="arrow-down-img" style="margin-top: 2px; transition-duration: 100ms;"></div>
                     </div>
-                    <div class="expand-button"><div style="height: 2px;"></div><img src="assets/arrow-down.svg" draggable="false"></div>
+                    <div class="deck-options-container" id="deck-options-container">
+                    </div>
                 </div>
                 <!--<div class="set-links">
                     <div class="button">セット変わる</div>
                     <div style="width: 14px;"></div>
                     <div class="button">セットに加える</div>
                 </div>-->
+                <div style="height: 4px;"></div>
                 <div style="height: 14px;"></div>
                 <div class="big-button" onclick="initgame()">今勉強する<div class="big-button-small-image"><img src="assets/arrow-right.svg" draggable="false"></div></div>
             </div>
