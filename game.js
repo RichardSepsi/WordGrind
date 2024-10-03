@@ -16,6 +16,8 @@ let cardname;
 let lastcard;
 let correctinsession = 0;
 let wronginsession = 0;
+let hiraganaonly = false;
+let katakanaonly = false;
 
 function updatewatch(){
     const currentTime = Date.now();
@@ -47,6 +49,12 @@ function initgame(){
     startime = Date.now() - elapsedtime
     timer = setInterval(updatewatch, 10);
     document.addEventListener('keypress', enterpress);
+
+    correctinsession = 0;
+    wronginsession = 0;
+    document.getElementById("correct-in-session").innerHTML = correctinsession
+    document.getElementById("wrong-in-session").innerHTML = wronginsession
+
     pickcard()
 }
 
@@ -91,6 +99,17 @@ function pickcard(){
     else{
         lastcard = cardname
     }
+    let tempstringcheck = deckdata[deckname][cardname].answer
+    if(wanakana.isHiragana(tempstringcheck) == true){
+        hiraganaonly = true;
+    }
+    else if(wanakana.isKatakana(tempstringcheck) == true){
+        katakanaonly = true;
+    }
+    else{
+        hiraganaonly = false;
+        katakanaonly = false;
+    }
     document.getElementById("ovl-card-front").innerHTML = deckdata[deckname][cardname].front
     document.getElementById("ovl-card-back").innerHTML = deckdata[deckname][cardname].back
     document.getElementById("ovl-card-answer").innerHTML = deckdata[deckname][cardname].answer
@@ -98,7 +117,16 @@ function pickcard(){
 }
 function checkans(){
     console.log("changed")
-    document.getElementById("main-input").value = wanakana.toKana(document.getElementById("main-input").value);
+    if(hiraganaonly == true){
+        document.getElementById("main-input").value = wanakana.toHiragana(document.getElementById("main-input").value);
+    }
+    else if(katakanaonly == true){
+        document.getElementById("main-input").value = wanakana.toKatakana(document.getElementById("main-input").value);
+    }
+    else{
+        
+    }
+    
     if(document.getElementById("main-input").value == deckdata[deckname][cardname].answer){
         correctinsession = correctinsession + 1
         document.getElementById("correct-in-session").innerHTML = correctinsession
@@ -135,6 +163,8 @@ function showanswer(){
     document.getElementById("input-field").style.pointerEvents = "none"
     document.getElementById("main-input").setAttribute("placeholder", "不正解")
     document.getElementById("main-input").value = ""
+    wronginsession = wronginsession + 1
+    document.getElementById("wrong-in-session").innerHTML = wronginsession
     document.removeEventListener('keypress', enterpress);
     document.addEventListener('keypress', enterpress2);
 }
