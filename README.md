@@ -1,4 +1,4 @@
-# WordGrind
+# WordGrind　・　言葉作業ゲー
 A simple web app for memorizing words.
 ## How does it work
 A random word gets picked up from a deck and you need to provide an answer.
