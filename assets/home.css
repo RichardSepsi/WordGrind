@@ -3,7 +3,7 @@
     width: 100%;
     height: 100%;
     /*padding: 110px 0;*/
-    padding: calc((100vh - 689px)/2) 0;
+    padding: calc((100vh - 659px)/2) 0;
     justify-content: center;
     flex-direction: row;
 }
@@ -20,6 +20,8 @@
     background-color: 0;
     padding: 25px;
     padding-top: 5px;
+    padding-bottom: 12px;
+    height: 67px;
 }
 .home-stats-container{
     display: flex;
