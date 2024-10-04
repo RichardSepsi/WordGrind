@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="assets/general.css">
     <link rel="stylesheet" href="assets/home.css">
     <link rel="stylesheet" href="assets/overlay.css">
+    <link rel="stylesheet" href="assets/options.css">
     <script defer src="wanakana.js"></script>
     <script defer src="script.js"></script>
     <script defer src="game.js"></script>
     <script defer src="decks.js"></script>
+    <script defer src="options.js"></script>
     <title>WordGrind</title>
 </head>
 <body id="body">
-    <div class="main-container">
+    <div class="main-container" id="main-container">
         <img src="assets/logo1.svg" draggable="false" style="user-select: none;">
         <img src="assets/logo.svg" draggable="false" width="120px" height="120px" style="height: 100%; margin-left: 20px; user-select: none;">
         <div style="width: 30px;"></div>
@@ -26,7 +28,7 @@
                 <div style="width: 20px;"></div>
                 <div class="button">セット加える<div class="button-small-image"><img src="assets/plus.svg" draggable="false"></div></div>
                 <div style="width: 20px;"></div>
-                <div class="button">オプション<div class="button-small-image"><img src="assets/settings.svg" draggable="false"></div></div>
+                <div class="button" onclick="gotooptions()">オプション<div class="button-small-image"><img src="assets/settings.svg" draggable="false"></div></div>
                 <div style="width: 20px;"></div>
                 <div class="button">統計<div class="button-small-image"><img src="assets/bar-chart-2.svg" draggable="false"></div></div>
             </div>

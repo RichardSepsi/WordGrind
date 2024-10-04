@@ -1,5 +1,6 @@
 
-var rawjson = `
+// Card data
+var rawcardsjson = `
 {
     "漢字単語" : {
         "card0" : {"front" : "簡単","answer" : "かんたん","back" : "simple, easy, uncomplicated","hint" : "no hint :/"},
@@ -34,20 +35,16 @@ var rawjson = `
     }
 }
 `
+var deckdata = JSON.parse(rawcardsjson);
 
-var deckdata = JSON.parse(rawjson);
 
-/*fetch ("data.json")
-    .then(response => response.json())
-    .then(deckdt => deckdata = deckdt)
-    .then(data => {
-        window.onload = function() {
-            let currentUrl = window.location.href;
-            if (currentUrl.indexOf("?id=") !== -1) {
-                let div = document.getElementById(currentUrl.split("?id=")[1]);
-                let event = new Event("click");
-                div.dispatchEvent(event);
-            }
-        };
-
-    })*/
+// Options
+var optionsrawjson = `
+{
+    "入力かなに変わる" : "1",
+    "カードの裏見せる" : "0",
+    "時計見せる" : "1",
+    "同じカードが続かないようにする" : "1"
+}
+`
+var optionsjson = JSON.parse(optionsrawjson);
