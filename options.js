@@ -8,27 +8,12 @@ var optionshtml = `
     </div>
     <div class="home-center-container" style="margin-left: 0;margin-top: 40px;">
         <div id="options-wrapper">
-            <div class="option-container">
-                <input type="checkbox" class="option-checkbox" checked/>
-                <span class="option-label">入力かなに変わる</span>
-            </div>
-            <div class="option-container">
-                <input type="checkbox" class="option-checkbox"/>
-                <span class="option-label">カードの裏見せる</span>
-            </div>
-            <div class="option-container">
-                <input type="checkbox" class="option-checkbox" checked/>
-                <span class="option-label">時計見せる</span>
-            </div>
-            <div class="option-container">
-                <input type="checkbox" class="option-checkbox" checked/>
-                <span class="option-label">同じカードが続かないようにする</span>
-            </div>
+            
         </div>
         <div style="height: 14px;"></div>
         <div style="display: flex; flex-direction: row; width: 100%;">
-            <div class="button" style="height: 50px; flex-grow: 0.5; margin-right: 7px;">保存する</div>
-            <div class="button" style="height: 50px; flex-grow: 0.5; margin-left: 7px;">リセット</div>
+            <div class="button" style="height: 50px; flex-grow: 0.5; margin-right: 7px;" onclick="saveoptions()">保存する</div>
+            <div class="button" style="height: 50px; flex-grow: 0.5; margin-left: 7px;" onclick="resetoptions()">リセット</div>
         </div>
     </div>
 </div>
@@ -45,6 +30,7 @@ function gotooptions(){
         document.getElementById("main-container").style.transition = "0ms"
         document.getElementById("main-container").style.transform = "translateX(75px)"
         document.getElementById("main-container").innerHTML = optionshtml
+        genoptions()
         setTimeout(()=> {
             document.getElementById("main-container").style.transition = "150ms ease-out"
             document.getElementById("main-container").style.transform = "translateX(0px)"
@@ -52,6 +38,45 @@ function gotooptions(){
         },10);
     },200);
 }
+
+function genoptions(){
+    Object.keys(optionsjson).forEach(key => {
+        if(optionsjson[key] == 1){
+            document.getElementById("options-wrapper").innerHTML += `
+            <div class="option-container">
+                <input type="checkbox" class="option-checkbox" id="`+key+"-checkbox"+`" checked/>
+                <span class="option-label">`+key+`</span>
+            </div>
+            `
+        }
+        else{
+            document.getElementById("options-wrapper").innerHTML += `
+            <div class="option-container">
+                <input type="checkbox" class="option-checkbox" id="`+key+"-checkbox"+`"/>
+                <span class="option-label">`+key+`</span>
+            </div>
+            `
+        }
+        
+    });
+}
+
+function resetoptions(){
+    document.getElementById("options-wrapper").innerHTML = ""
+    genoptions()
+}
+
+function saveoptions(){
+    Object.keys(optionsjson).forEach(key => {
+        if(document.getElementById(key+"-checkbox").checked){
+            optionsjson[key] = "1"
+        }
+        else{
+            optionsjson[key] = "0"
+        }
+    });
+}
+
 function exitoptions(){
     document.getElementById("main-container").style.transition = "150ms ease-in"
     document.getElementById("main-container").style.transform = "translateX(75px)"

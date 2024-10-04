@@ -1,3 +1,4 @@
+
 function intfoc(){
     document.getElementById("input-field").setAttribute("style", "outline: 3px solid hsla(0, 0%, 30%, 1); !important;")
 }
@@ -43,12 +44,31 @@ function initgame(){
     hideanswer()
     hidehint()
 
+    document.getElementById("main-input").value = ""
+
     // stopwatch
     startime = 0;
     elapsedtime = 0;
     startime = Date.now() - elapsedtime
     timer = setInterval(updatewatch, 10);
     document.addEventListener('keypress', enterpress);
+
+    if(optionsjson["カードの裏見せる"] == "1"){
+        document.getElementById("show-back-btn").setAttribute("class", "button disabled")
+        showback()
+    }
+    else{
+        document.getElementById("show-back-btn").setAttribute("class", "button")
+    }
+
+    if(optionsjson["時計見せる"] == "0"){
+        document.getElementById("stopwatch-num").style.opacity = "0"
+        document.getElementById("stopwatch-num").style.pointerEvents = "none"
+    }
+    else{
+        document.getElementById("stopwatch-num").style.opacity = "1"
+        document.getElementById("stopwatch-num").style.pointerEvents = "all"
+    }
 
     correctinsession = 0;
     wronginsession = 0;
@@ -81,7 +101,9 @@ function nextbutton(){
 }
 
 function pickcard(){
-    hideback()
+    if(optionsjson["カードの裏見せる"] == "0"){
+        hideback()
+    }
     hideanswer()
     hidehint()
 
@@ -90,26 +112,39 @@ function pickcard(){
     wordnum = Math.floor(Math.random() * wordcount)
     console.log("card"+wordnum)
     cardname = "card"+wordnum
-    if(cardname == lastcard){
-        pickcard()
-    }
-    else if(wordcount == 1){
 
+    if(optionsjson["同じカードが続かないようにする"] == "1"){
+        if(cardname == lastcard){
+            pickcard()
+        }
+        else if(wordcount == 1){
+    
+        }
+        else{
+            lastcard = cardname
+        }
     }
-    else{
-        lastcard = cardname
-    }
+    else{}
+    
     let tempstringcheck = deckdata[deckname][cardname].answer
-    if(wanakana.isHiragana(tempstringcheck) == true){
-        hiraganaonly = true;
-    }
-    else if(wanakana.isKatakana(tempstringcheck) == true){
-        katakanaonly = true;
+
+    if(optionsjson["入力かなに変わる"] == "1"){
+        if(wanakana.isHiragana(tempstringcheck) == true){
+            hiraganaonly = true;
+        }
+        else if(wanakana.isKatakana(tempstringcheck) == true){
+            katakanaonly = true;
+        }
+        else{
+            hiraganaonly = false;
+            katakanaonly = false;
+        }
     }
     else{
         hiraganaonly = false;
         katakanaonly = false;
     }
+
     document.getElementById("ovl-card-front").innerHTML = deckdata[deckname][cardname].front
     document.getElementById("ovl-card-back").innerHTML = deckdata[deckname][cardname].back
     document.getElementById("ovl-card-answer").innerHTML = deckdata[deckname][cardname].answer
