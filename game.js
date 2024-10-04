@@ -1,11 +1,4 @@
 
-function intfoc(){
-    document.getElementById("input-field").setAttribute("style", "outline: 3px solid hsla(0, 0%, 30%, 1); !important;")
-}
-function intblr(){
-    document.getElementById("input-field").setAttribute("style", "outline: 3px solid hsla(0, 0%, 30%, 0.5); !important;")
-}
-
 const stopwatch = document.getElementById("stopwatch-num")
 let timer = null;
 let startime = 0;
@@ -196,6 +189,7 @@ function showanswer(){
     document.getElementById("input-field").style.backgroundColor = "hsla(0, 0%, 16%, 0.75)"
     document.getElementById("input-field").style.outline = "3px solid hsla(0, 56%, 48%, 1)"
     document.getElementById("input-field").style.pointerEvents = "none"
+    document.getElementById("main-input").blur()
     document.getElementById("main-input").setAttribute("placeholder", "不正解")
     document.getElementById("main-input").value = ""
     wronginsession = wronginsession + 1

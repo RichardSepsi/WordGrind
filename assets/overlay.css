@@ -99,10 +99,17 @@
     text-decoration: none;
     font-family: NotoJP, Inter;
     height: 100%;
+    border-radius: 6px;
+    outline: 3px solid hsla(0, 0%, 30%, 0);
+    transition-duration: 100ms;
 }
 .ovl-input-arrow{
     height: 100%;
     margin-right: 10px;
+    transition-duration: 100ms;
+}
+.ovl-input:focus{
+    outline: 3px solid hsla(0, 0%, 30%, 1);
     transition-duration: 100ms;
 }
 .ovl-input:focus + .ovl-input-arrow{
