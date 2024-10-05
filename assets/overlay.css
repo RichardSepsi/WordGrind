@@ -1,7 +1,7 @@
 .overlay-container{
     position: absolute;
     display: flex;
-    height: 100vh;
+    height: 100svh;
     width: 100vw;
     background-color: hsl(0, 0%, 10%);
     flex-direction: column;
@@ -36,7 +36,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: calc(100vh - 240px);
+    height: calc(100svh - 240px);
     flex-direction: column;
 }
 .ovl-card-front{
@@ -115,4 +115,69 @@
 .ovl-input:focus + .ovl-input-arrow{
     filter: brightness(150%);
     transition-duration: 100ms;
+}
+
+
+#hint-mobile{
+    opacity: 0;
+    pointer-events: none;
+}
+#bugreport-mobile{
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 1000px) {
+    #hint-mobile{
+        opacity: 1;
+        pointer-events: all;
+    }
+    #bugreport-mobile{
+        opacity: 1;
+        pointer-events: all;
+    }
+    #hint-pc{
+        opacity: 0;
+        pointer-events: none;
+        width: 0;
+    }
+    #bugreport-pc{
+        opacity: 0;
+        pointer-events: none;
+        width: 0;
+    }
+    .ovl-main{
+        height: calc(95svh - 240px);
+    }
+    #input-mobile-edit{
+        margin-right: -76px;
+    }
+    #clock-spacer{
+        display: none;
+    }
+}
+@media screen and (max-width: 736px) {
+    #stopwatch-num{
+        top: 98px !important;
+    }
+}
+@media screen and (max-width: 600px) {
+    #input-field{
+        width: 265px;
+    }
+    #input-mobile-edit{
+        margin-left: -76px;
+    }
+}
+@media screen and (max-width: 420px) {
+    .overlay-container > *{
+        transform: scale(0.9);
+    }
+    .overlay-container{
+        padding-top: 10px;
+        padding: -20px;
+    }
+    #mobile-remove-label{
+        display: none;
+    }
 }

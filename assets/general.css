@@ -72,7 +72,7 @@ html{
 body {
     color: #e6e6e6;
     /*background-color: hsl(40, 33%, 8%);*/
-    height: 100vh !important;
+    height: 100svh !important;
     overflow: hidden !important;
     opacity: 1; 
 

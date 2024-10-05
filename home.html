@@ -19,18 +19,18 @@
 </head>
 <body id="body">
     <div class="main-container" id="main-container">
-        <img src="assets/logo1.svg" draggable="false" style="user-select: none;">
-        <img src="assets/logo.svg" draggable="false" width="120px" height="120px" style="height: 100%; margin-left: 20px; user-select: none;">
-        <div style="width: 30px;"></div>
+        <img src="assets/logo1.svg" draggable="false" style="user-select: none;" class="mobile-remove">
+        <img src="assets/logo.svg" draggable="false" width="120px" height="120px" style="height: 100%; margin-left: 20px; user-select: none;" class="mobile-remove">
+        <div style="width: 30px;" class="mobile-remove"></div>
         <div class="home-content">
             <div class="home-nav-container">
                 <div class="button">セット管理する<div class="button-small-image"><img src="assets/menu.svg" draggable="false"></div></div>
                 <div style="width: 20px;"></div>
                 <div class="button">セット加える<div class="button-small-image"><img src="assets/plus.svg" draggable="false"></div></div>
+                <div style="width: 20px;" id="mobile-remove-2"></div>
+                <div class="button" id="mobile-margin-add" onclick="gotooptions()">オプション<div class="button-small-image"><img src="assets/settings.svg" draggable="false"></div></div>
                 <div style="width: 20px;"></div>
-                <div class="button" onclick="gotooptions()">オプション<div class="button-small-image"><img src="assets/settings.svg" draggable="false"></div></div>
-                <div style="width: 20px;"></div>
-                <div class="button">統計<div class="button-small-image"><img src="assets/bar-chart-2.svg" draggable="false"></div></div>
+                <div class="button" id="mobile-margin-add">統計<div class="button-small-image"><img src="assets/bar-chart-2.svg" draggable="false"></div></div>
             </div>
             <div class="home-stats-container">
                 <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">今日:</span> <span style="font-family: Inter;">0</span></span>
@@ -41,7 +41,7 @@
                 <div style="width: 16px;"></div>
                 <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">合計:</span> <span style="font-family: Inter;">0</span></span>
             </div>
-            <div style="height: 32px;"></div>
+            <div style="height: 32px;" id="height-remove"></div>
             <div class="home-center-container">
                 <div style="position: relative;" id="selector-wrapper">
                     <div class="home-selector-container" id="home-selector-container" onclick="expanddecks()">
@@ -64,7 +64,7 @@
                 <div class="big-button" onclick="initgame()">今勉強する<div class="big-button-small-image"><img src="assets/arrow-right.svg" draggable="false"></div></div>
             </div>
             <div style="height: 32px;"></div>
-            <div style="height: 45px;"></div>
+            <div style="height: 45px;" id="height-remove"></div>
             <div class="home-stats-container" style="height: 75px;">
                 <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">勉強日数:</span> <span style="font-family: Inter;">0</span></span>
                 <div style="width: 16px;"></div>
@@ -74,14 +74,14 @@
                 <div style="width: 16px;"></div>
                 <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">連続:</span> <span style="font-family: Inter;">0</span></span>
             </div>
-            <div style="height: 5px; width: 560px; background-color: #292929; margin-left: 25px;"></div>
+            <div style="height: 5px; width: 560px; background-color: #292929; margin-left: 25px;" id="home-bottom-spacer"></div>
             <div style="height: 20px;"></div>
-            <div class="home-nav-container">
+            <div class="home-nav-container-2">
                 <a class="gen-link" href="https://github.com/RichardSepsi/WordGrind" draggable="false"><div class="button">GitHub<div class="button-small-image2"><img src="assets/arrow-right.svg" draggable="false"></div></div></a>
                 <div style="width: 40px;"></div>
-                <div class="button disabled">英語 / English<div class="button-small-image2"><img src="assets/arrow-right.svg" draggable="false"></div></div>
+                <div class="button">使用方法<div class="button-small-image2"><img src="assets/arrow-right.svg" draggable="false"></div></div>
                 <div style="width: 40px;"></div>
-                <a class="gen-link" href="https://www.sepsi.sk/wordgrind" draggable="false"><div class="button">sepsi.sk<div class="button-small-image2"><img src="assets/arrow-right.svg" draggable="false"></div></div></a>
+                <a class="gen-link" href="https://www.sepsi.sk/wordgrind" draggable="false" id="portfolio-link"><div class="button">sepsi.sk<div class="button-small-image2"><img src="assets/arrow-right.svg" draggable="false"></div></div></a>
             </div>
         </div>
     </div>
@@ -91,11 +91,11 @@
                 <div class="exit-button" onclick="exitgame()">
                     <img src="assets/log-out.svg" draggable="false" height="30px" width="30px">
                     <div style="width: 16px;"></div>
-                    <span style="font-size: 22px; font-weight: 500; color: #696969;">出る</span>
+                    <span style="font-size: 22px; font-weight: 500; color: #696969;" id="mobile-remove-label">出る</span>
                 </div>
             </div>
             <div style="display: flex; flex-direction: row;">
-                <div style="width: 123px;"></div>
+                <div style="width: 123px;" id="clock-spacer"></div>
                 <span style="position: absolute; color: #969696; font-size: 28px; font-weight: 500; width: 130px; text-align: left; top: 38px; left: calc(50% - 65px);" id="stopwatch-num">00:00:00</span>
             </div>
             <div style="display: flex; flex-direction: row;">
@@ -111,21 +111,23 @@
             <div class="ovl-card-hint" id="ovl-card-hint" style="opacity: 0; pointer-events: none;">no hint :/</div>
         </div>
         <div class="ovl-bottom">
-            <div style="height: 50px; display: flex; flex-direction: row;">
+            <div style="height: 50px; display: flex; flex-direction: row;" id="hint-pc">
                 <div class="button" onclick="showhint()">ヒント見せる</div>
                 <div style="width: 68px;"></div>
             </div>
-            <div style="display: flex; flex-direction: row; height: 64px; position: relative;">
+            <div style="display: flex; flex-direction: row; height: 64px; position: relative;" id="input-mobile-edit">
                 <div class="input-field" id="input-field">
                     <input placeholder="ここにタイプする" class="ovl-input" name="main-input" tabindex="1" id="main-input" onkeyup="checkans()"autocomplete="off">
                     <!--<img src="assets/arrow-right2.svg" draggable="false" width="30" height="30" class="ovl-input-arrow" onclick="pickcard()">-->
                 </div>
                 <div style="position: absolute; height: 50px; top: -66px; width: 150px;" class="button" onclick="showanswer()">答え見せる</div>
                 <div style="position: absolute; height: 50px; top: -66px; width: 174px; left: 166px;" class="button" id="show-back-btn" onclick="showback()">カードめくる</div>
+                <div style="position: absolute; height: 50px; top: -132px; width: 150px;" class="button" id="hint-mobile" onclick="showhint()">ヒント見せる</div>
+                <a class="gen-link" href="https://github.com/RichardSepsi/WordGrind/issues/new" draggable="false" id="bugreport-mobile"><div style="position: absolute; height: 50px; top: -132px; width: 174px; left: 166px;" class="button">バグを報告する<div class="button-small-image2"><img src="assets/arrow-right.svg" draggable="false"></div></div></a>
                 <div style="width: 16px;"></div>
                 <div class="button disabled" id="nextbutton" onclick="nextbutton()"><div class="button-small-image3"><img src="assets/arrow-right2.svg" draggable="false"></div></div>
             </div>
-            <div style="height: 50px; margin-right: 12px;">
+            <div style="height: 50px; margin-right: 12px;" id="bugreport-pc">
                 <a class="gen-link" href="https://github.com/RichardSepsi/WordGrind/issues/new" draggable="false"><div class="button">バグを報告する<div class="button-small-image2"><img src="assets/arrow-right.svg" draggable="false"></div></div></a>
             </div>
         </div>

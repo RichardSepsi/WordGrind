@@ -58,3 +58,14 @@
     font-weight: 500;
     font-size: 18px;
 }
+
+@media screen and (max-width: 1700px) {
+    .side-window{
+        width: 800px;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .side-window{
+        width: fit-content;
+    }
+}
