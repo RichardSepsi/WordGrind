@@ -51,7 +51,13 @@
         "card48" : {"front" : "悪い","answer" : "わるい","back" : "bad","hint" : "no hint :/"},
         "card49" : {"front" : "教える","answer" : "おしえる","back" : "teach, instruct, tell","hint" : "no hint :/"},
         "card50" : {"front" : "嫌い","answer" : "きらい","back" : "disliked","hint" : "no hint :/"},
-        "card51" : {"front" : "全然","answer" : "ぜんぜん","back" : "(not) at all","hint" : "no hint :/"}
+        "card51" : {"front" : "全然","answer" : "ぜんぜん","back" : "(not) at all","hint" : "no hint :/"},
+        "card52" : {"front" : "胸","answer" : "むね","back" : "chest, breast","hint" : "no hint :/"},
+        "card53" : {"front" : "右","answer" : "みぎ","back" : "right","hint" : "no hint :/"},
+        "card54" : {"front" : "左","answer" : "ひだり","back" : "left","hint" : "no hint :/"},
+        "card55" : {"front" : "間","answer" : "あいだ","back" : "gap, interval","hint" : "no hint :/"},
+        "card56" : {"front" : "最初","answer" : "さいしょ","back" : "beginning","hint" : "no hint :/"},
+        "card57" : {"front" : "最後","answer" : "さいご","back" : "end, last","hint" : "no hint :/"}
     },
     "ひらがな単語" : {
         "card0" : {"front" : "ずっと","answer" : "continuously","back" : "-","hint" : "no hint :/"},

@@ -74,6 +74,7 @@ function initgame(){
 function enterpress(e){
     if (e.key === 'Enter') {
         showanswer()
+        showback()
     }
 }
 function enterpress2(e){
