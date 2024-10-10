@@ -17,7 +17,7 @@ Object.keys(deckdata).forEach(key => {
         document.getElementById("deck-options-container").innerHTML += `
         <div class="home-selector-container-option" id="opt-`+(counter+1)+`" onclick="setdecks(this.id)">
             <span style="font-size: 28px; font-weight: 600; color: #969696; padding-left: 23px; pointer-events: none;" id="opt-`+(counter+1)+`-name">`+key+`</span>
-            <span style="font-size: 20px; font-weight: 600; color: #696969; padding-bottom: 1px; padding-left: 23px; pointer-events: none;" id="opt-`+(counter+1)+`-num">#0`+(counter+1)+`</span>
+            <span style="font-size: 20px; font-weight: 600; color: #696969; padding-bottom: 1px; padding-left: 23px; pointer-events: none;" id="opt-`+(counter+1)+`-num">#`+(counter+1)+`</span>
         </div>
         `
     }

@@ -1,0 +1,93 @@
+.mng-side-window{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.manage-selector-container{
+    display: flex;
+    background-color: hsl(0, 0%, 16%);
+    border-radius: 6px;
+    height: 80px;
+    width: 332px;
+    align-items: center;
+    user-select: none;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-bottom: 14px;
+    transition-duration: 100ms;
+    position: relative;
+}
+.manage-selector-container:hover{
+    background-color: hsl(0, 0%, 21%);
+    transition-duration: 100ms;
+}
+.manage-selector-container.selected{
+    background-color: hsl(0, 0%, 26%);
+    transition-duration: 100ms;
+}
+.manage-card-container{
+    width: 100%;
+    height: 42px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+.manage-card-label{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(100% - 52px);
+    height: 100%;
+    border-radius: 6px;
+    padding: 0 12px;
+    user-select: none;
+    cursor: pointer;
+    transition-duration: 100ms;
+}
+.manage-card-label:hover{
+    background-color: hsl(0, 0%, 16%);
+    transition-duration: 100ms;
+}
+.manage-card-label.selected{
+    background-color: hsl(0, 0%, 21%);
+    transition-duration: 100ms;
+}
+.manage-card-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    width: 42px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition-duration: 100ms;
+}
+.manage-card-buttons:hover{
+    filter: brightness(170%);
+    transition-duration: 100ms;
+}
+.manage-input{
+    width: 100%;
+    height: 64px;
+    display: flex;
+    border-radius: 6px;
+    background-color: hsla(0, 0%, 16%, 1);
+    outline: 3px solid hsla(0, 0%, 30%, 0.5);
+    transition-duration: 100ms;
+    color: #e6e6e6;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: NotoJP, Inter;
+    border: 0;
+    padding-left: 20px;
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+.manage-input:focus{
+    outline: 3px solid hsla(0, 0%, 30%, 1);
+    transition-duration: 100ms;
+}

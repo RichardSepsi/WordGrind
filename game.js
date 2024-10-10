@@ -143,6 +143,7 @@ function pickcard(){
     document.getElementById("ovl-card-back").innerHTML = deckdata[deckname][cardname].back
     document.getElementById("ovl-card-answer").innerHTML = deckdata[deckname][cardname].answer
     document.getElementById("ovl-card-hint").innerHTML = deckdata[deckname][cardname].hint
+    document.getElementById("main-input").focus()
 }
 function checkans(){
     console.log("changed")
