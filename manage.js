@@ -80,12 +80,13 @@ function genmngdecks(){
     Object.keys(deckdata).forEach(key => {
         counter = counter + 1
         document.getElementById("mng-deck-list").innerHTML += `
-        <div class="manage-selector-container" id="`+key+`-manage" onclick="mngselectdeck('`+key+`')">
+        <div class="manage-selector-container" id="`+key+`-manage">
+            <div style="position: absolute; top: 0; left: 0; display: flex; width: 100%; height: 100%;" onclick="mngselectdeck('`+key+`')"></div>
             <div style="display: flex; justify-content: center; align-items: center;">
                 <span style="font-size: 28px; font-weight: 600; color: #969696; padding-left: 23px; pointer-events: none;" id="mng-id-deck-name">`+key+`</span>
                 <span style="font-size: 20px; font-weight: 600; color: #696969; padding-bottom: 1px; padding-left: 23px; pointer-events: none;" id="mng-id-deck-num">#`+counter+`</span>
             </div>
-            <div class="button" style="height: 50px; width: 50px; flex-grow: 0.5; margin-right: 7px; position: absolute; left: -80px;" id="`+key+`-card-del">
+            <div class="button" style="height: 50px; width: 50px; flex-grow: 0.5; margin-right: 7px; position: absolute; left: -80px;" id="`+key+`-card-del" onclick="deldeck('`+key+`')">
                 <img src="assets/trash2.svg">
             </div>
         </div>
@@ -108,7 +109,7 @@ function gencards(iden){
                 <span style="font-size: 18px; font-weight: 500;">`+deckdata[iden][subkey].front+`</span>
                 <span style="font-size: 18px; font-weight: 500; color: #969696;">`+deckdata[iden][subkey].answer+`</span>
             </div>
-            <div class="manage-card-buttons" id="`+deckdata[iden][subkey].front+`-card-del">
+            <div class="manage-card-buttons" id="`+deckdata[iden][subkey].front+`-card-del" onclick="delcard('`+subkey+`')">
                 <img src="assets/trash.svg">
             </div>
         </div>
@@ -120,7 +121,7 @@ function gencards(iden){
         }
     });
 }
-function mngselectdeck(ident){
+function mngselectdeck(ident){    
     document.querySelectorAll(".manage-selector-container").forEach(subkey => {
         subkey.setAttribute("class", "manage-selector-container")
     });
@@ -141,6 +142,29 @@ function displaycarddata(identy){
     document.getElementById("manage-input-answer").value = deckdata[currentdeck][identy].answer
     document.getElementById("manage-input-back").value = deckdata[currentdeck][identy].back
     document.getElementById("manage-input-hint").value = deckdata[currentdeck][identy].hint
+}
+
+function delcard(idn){
+    delete deckdata[currentdeck][idn];
+    genmngdecks()
+}
+function deldeck(idnt){
+    delete deckdata[idnt];
+    genmngdecks()
+}
+
+function savecard(){
+    deckdata[currentdeck][currentcard].front = document.getElementById("manage-input-front").value
+    deckdata[currentdeck][currentcard].answer = document.getElementById("manage-input-answer").value
+    deckdata[currentdeck][currentcard].back = document.getElementById("manage-input-back").value
+    deckdata[currentdeck][currentcard].hint = document.getElementById("manage-input-hint").value
+    gencards(currentdeck)
+}
+function resetcard(){
+    document.getElementById("manage-input-front").value = deckdata[currentdeck][currentcard].front
+    document.getElementById("manage-input-answer").value = deckdata[currentdeck][currentcard].answer
+    document.getElementById("manage-input-back").value = deckdata[currentdeck][currentcard].back
+    document.getElementById("manage-input-hint").value = deckdata[currentdeck][currentcard].hint
 }
 
 function exitmanage(){
