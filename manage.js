@@ -6,7 +6,7 @@ var managehtml = `
     <div style="width: 16px;"></div>
     <span style="font-size: 22px; font-weight: 500; color: #696969;">出る</span>
 </div>
-<div style="display: flex; flex-direction: row; gap: 20px;">
+<div style="display: flex; flex-direction: row; gap: 20px;" id="mng-mobile-container">
     <div class="home-center-container" id="mng-deck-list" style="margin-left: 0;margin-top: 40px; padding-bottom: 0; width: 360px; height: fit-content;">
     </div>
     <div class="home-center-container" id="mng-card-list" style="margin-left: 0;margin-top: 40px; padding-bottom: 9px; width: 360px; height: fit-content; max-height: 606px; overflow-y: auto; overflow-x: hidden;">
@@ -38,7 +38,7 @@ var managehtml = `
             </div>
         </div>
     </div>
-    <div class="home-center-container" style="margin-left: 0;margin-top: 40px; padding-bottom: 0; width: 300px; height: fit-content;">
+    <div class="home-center-container" style="margin-left: 0;margin-top: 40px; padding-bottom: 0; width: 300px; height: fit-content;" id="mobile-mng-cardinfo">
         <input placeholder="前" class="manage-input" name="manage-input" tabindex="1" id="manage-input-front" autocomplete="off">
         <input placeholder="答え" class="manage-input" name="manage-input" tabindex="1" id="manage-input-answer" autocomplete="off">
         <input placeholder="後ろ" class="manage-input" name="manage-input" tabindex="1" id="manage-input-back" autocomplete="off">
@@ -86,7 +86,7 @@ function genmngdecks(){
                 <span style="font-size: 28px; font-weight: 600; color: #969696; padding-left: 23px; pointer-events: none;" id="mng-id-deck-name">`+key+`</span>
                 <span style="font-size: 20px; font-weight: 600; color: #696969; padding-bottom: 1px; padding-left: 23px; pointer-events: none;" id="mng-id-deck-num">#`+counter+`</span>
             </div>
-            <div class="button" style="height: 50px; width: 50px; flex-grow: 0.5; margin-right: 7px; position: absolute; left: -80px;" id="`+key+`-card-del" onclick="deldeck('`+key+`')">
+            <div class="mng-del-button" style="height: 50px; width: 50px; flex-grow: 0.5; margin-right: 7px; position: absolute; left: -80px;" id="`+key+`-card-del" onclick="deldeck('`+key+`')">
                 <img src="assets/trash2.svg">
             </div>
         </div>
