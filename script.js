@@ -101,7 +101,9 @@ var rawcardsjson = `
         "card96" : {"front" : "変","answer" : "へん","back" : "strange, odd","hint" : "no hint :/"},
         "card97" : {"front" : "読む","answer" : "よむ","back" : "to read","hint" : "no hint :/"},
         "card98" : {"front" : "当然","answer" : "とうぜん","back" : "natural","hint" : "no hint :/"},
-        "card99" : {"front" : "情報","answer" : "じょうほう","back" : "information, news","hint" : "no hint :/"}
+        "card99" : {"front" : "情報","answer" : "じょうほう","back" : "information, news","hint" : "no hint :/"},
+        "card100" : {"front" : "掛かる","answer" : "かかる","back" : "to take, to hang","hint" : "no hint :/"},
+        "card101" : {"front" : "完全","answer" : "かんぜん","back" : "perfect, complete","hint" : "no hint :/"}
     },
     "ひらがな単語" : {
         "card0" : {"front" : "ずっと","answer" : "continuously","back" : "-","hint" : "no hint :/"},

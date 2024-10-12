@@ -148,10 +148,10 @@ function pickcard(){
 function checkans(){
     console.log("changed")
     if(hiraganaonly == true){
-        document.getElementById("main-input").value = wanakana.toHiragana(document.getElementById("main-input").value);
+        document.getElementById("main-input").value = wanakana.toHiragana(document.getElementById("main-input").value,  { IMEMode: true });
     }
     else if(katakanaonly == true){
-        document.getElementById("main-input").value = wanakana.toKatakana(document.getElementById("main-input").value);
+        document.getElementById("main-input").value = wanakana.toKatakana(document.getElementById("main-input").value,  { IMEMode: true });
     }
     else{
         
