@@ -146,7 +146,7 @@ function displaycarddata(identy){
 
 function delcard(idn){
     delete deckdata[currentdeck][idn];
-    genmngdecks()
+    gencards(currentdeck)
 }
 function deldeck(idnt){
     delete deckdata[idnt];
