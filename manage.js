@@ -1,7 +1,7 @@
 
 var managehtml = `
 <div class="mng-side-window">
-<div class="exit-button" onclick="exitmanage()">
+<div class="exit-button" onclick="exitmanage(), setTimeout(initial, 200)">
     <img src="assets/log-out.svg" draggable="false" height="30px" width="30px">
     <div style="width: 16px;"></div>
     <span style="font-size: 22px; font-weight: 500; color: #696969;">出る</span>
