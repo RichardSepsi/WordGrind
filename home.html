@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/options.css">
     <link rel="stylesheet" href="assets/manage.css">
     <link rel="stylesheet" href="assets/add.css">
+    <link rel="stylesheet" href="assets/stats.css">
     <script defer src="wanakana.js"></script>
     <script defer src="script.js"></script>
     <script defer src="game.js"></script>
@@ -19,6 +20,7 @@
     <script defer src="options.js"></script>
     <script defer src="manage.js"></script>
     <script defer src="add.js"></script>
+    <script defer src="stats.js"></script>
     <title>WordGrind</title>
 </head>
 <body id="body">
@@ -32,9 +34,9 @@
                 <div style="width: 20px;"></div>
                 <div class="button" onclick="gotoadd()">セット加える<div class="button-small-image"><img src="assets/plus.svg" draggable="false"></div></div>
                 <div style="width: 20px;" id="mobile-remove-2"></div>
-                <div class="button" id="mobile-margin-add" onclick="gotooptions()">オプション<div class="button-small-image"><img src="assets/settings.svg" draggable="false"></div></div>
+                <div class="button" onclick="gotooptions()" id="mobile-margin-add">オプション<div class="button-small-image"><img src="assets/settings.svg" draggable="false"></div></div>
                 <div style="width: 20px;"></div>
-                <div class="button" id="mobile-margin-add">統計<div class="button-small-image"><img src="assets/bar-chart-2.svg" draggable="false"></div></div>
+                <div class="button" onclick="gotostats()" id="mobile-margin-add">統計<div class="button-small-image"><img src="assets/bar-chart-2.svg" draggable="false"></div></div>
             </div>
             <div class="home-stats-container">
                 <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">今日:</span> <span style="font-family: Inter;">0</span></span>
