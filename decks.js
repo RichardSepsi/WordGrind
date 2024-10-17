@@ -9,6 +9,8 @@ function initial() {
     }
     
     let counter = 0
+
+    document.getElementById("deck-options-container").innerHTML = ""
     
     Object.keys(deckdata).forEach(key => {
         if(counter == 0){
@@ -22,7 +24,6 @@ function initial() {
             </div>
             `
         }
-        console.log(key);
         counter = counter + 1
     });
 }

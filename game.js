@@ -31,7 +31,6 @@ function updatewatch(){
 function initgame(){
     document.getElementById("overlay-container").style.opacity = "1"
     document.getElementById("overlay-container").style.pointerEvents = "all"
-    console.log("test")
 
     hideback()
     hideanswer()
@@ -104,7 +103,6 @@ function pickcard(){
     deckname = document.getElementById("id-deck-name").innerHTML
     wordcount = Object.keys(deckdata[deckname]).length
     wordnum = Math.floor(Math.random() * wordcount)
-    console.log("card"+wordnum)
     cardname = "card"+wordnum
 
     if(optionsjson["同じカードが続かないようにする"] == "1"){
@@ -146,7 +144,6 @@ function pickcard(){
     document.getElementById("main-input").focus()
 }
 function checkans(){
-    console.log("changed")
     if(hiraganaonly == true){
         document.getElementById("main-input").value = wanakana.toHiragana(document.getElementById("main-input").value,  { IMEMode: true });
     }
@@ -168,7 +165,6 @@ function checkans(){
 function exitgame(){
     document.getElementById("overlay-container").style.opacity = "0"
     document.getElementById("overlay-container").style.pointerEvents = "none"
-    console.log("test")
 
     // stopwatch
     clearInterval(timer)

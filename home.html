@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="assets/overlay.css">
     <link rel="stylesheet" href="assets/options.css">
     <link rel="stylesheet" href="assets/manage.css">
+    <link rel="stylesheet" href="assets/add.css">
     <script defer src="wanakana.js"></script>
     <script defer src="script.js"></script>
     <script defer src="game.js"></script>
     <script defer src="decks.js"></script>
     <script defer src="options.js"></script>
     <script defer src="manage.js"></script>
+    <script defer src="add.js"></script>
     <title>WordGrind</title>
 </head>
 <body id="body">
@@ -28,7 +30,7 @@
             <div class="home-nav-container">
                 <div class="button" onclick="gotomanage()">セット管理する<div class="button-small-image"><img src="assets/menu.svg" draggable="false"></div></div>
                 <div style="width: 20px;"></div>
-                <div class="button">セット加える<div class="button-small-image"><img src="assets/plus.svg" draggable="false"></div></div>
+                <div class="button" onclick="gotoadd()">セット加える<div class="button-small-image"><img src="assets/plus.svg" draggable="false"></div></div>
                 <div style="width: 20px;" id="mobile-remove-2"></div>
                 <div class="button" id="mobile-margin-add" onclick="gotooptions()">オプション<div class="button-small-image"><img src="assets/settings.svg" draggable="false"></div></div>
                 <div style="width: 20px;"></div>

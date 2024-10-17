@@ -175,6 +175,7 @@ function exitmanage(){
         document.getElementById("main-container").style.transition = "0ms"
         document.getElementById("main-container").style.transform = "translateX(-75px)"
         document.getElementById("main-container").innerHTML = temphtmlsave2
+        initial()
         setTimeout(()=> {
             document.getElementById("main-container").style.transition = "150ms ease-out"
             document.getElementById("main-container").style.transform = "translateX(0px)"
