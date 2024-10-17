@@ -26,6 +26,7 @@ function updatewatch(){
     seconds = String(seconds).padStart(2, "0");
 
     stopwatch.textContent = `${hours}:${minutes}:${seconds}`
+    updatestats()
 }
 
 function initgame(){
@@ -170,6 +171,12 @@ function exitgame(){
     clearInterval(timer)
     startime = 0;
     elapsedtime = 0;
+    globaltoday = globaltoday + correctinsession + wronginsession
+    globalcorrect = globalcorrect + correctinsession
+    globalincorrect = globalincorrect + wronginsession
+    globaltotal = globaltotal + correctinsession + wronginsession
+    initial()
+    updatestats()
 }
 
 function showback(){

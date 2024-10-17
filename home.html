@@ -39,13 +39,13 @@
                 <div class="button" onclick="gotostats()" id="mobile-margin-add">統計<div class="button-small-image"><img src="assets/bar-chart-2.svg" draggable="false"></div></div>
             </div>
             <div class="home-stats-container">
-                <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">今日:</span> <span style="font-family: Inter;">0</span></span>
+                <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">今日:</span> <span style="font-family: Inter;" id="stats-today">0</span></span>
                 <div style="width: 16px;"></div>
-                <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">正解:</span> <span style="font-family: Inter;">0</span></span>
+                <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">正解:</span> <span style="font-family: Inter;" id="stats-correct">0</span></span>
                 <div style="width: 16px;"></div>
-                <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">不正解:</span> <span style="font-family: Inter;">0</span></span>
+                <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">不正解:</span> <span style="font-family: Inter;" id="stats-incorrect">0</span></span>
                 <div style="width: 16px;"></div>
-                <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">合計:</span> <span style="font-family: Inter;">0</span></span>
+                <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">合計:</span> <span style="font-family: Inter;" id="stats-total">0</span></span>
             </div>
             <div style="height: 32px;" id="height-remove"></div>
             <div class="home-center-container">
@@ -67,13 +67,13 @@
             <div style="height: 32px;"></div>
             <div style="height: 45px;" id="height-remove"></div>
             <div class="home-stats-container" style="height: 75px;">
-                <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">勉強日数:</span> <span style="font-family: Inter;">0</span></span>
+                <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">勉強日数:</span> <span style="font-family: Inter;" id="stats-studydays">0</span></span>
                 <div style="width: 16px;"></div>
-                <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">精度:</span> <span style="font-family: Inter;">0%</span></span>
+                <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">精度:</span> <span style="font-family: Inter;" id="stats-accuracy">0%</span></span>
                 <div style="width: 16px;"></div>
-                <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">日平均:</span> <span style="font-family: Inter;">0</span></span>
+                <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">日平均:</span> <span style="font-family: Inter;" id="stats-dailyaverage">0</span></span>
                 <div style="width: 16px;"></div>
-                <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">連続:</span> <span style="font-family: Inter;">0</span></span>
+                <span style="font-weight: 500; font-size: 26px;"><span style="color: hsl(0, 0%, 30%);">連続:</span> <span style="font-family: Inter;" id="stats-streak">0</span></span>
             </div>
             <div style="height: 5px; width: 560px; background-color: #292929; margin-left: 25px;" id="home-bottom-spacer"></div>
             <div style="height: 20px;"></div>

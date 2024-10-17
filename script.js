@@ -175,3 +175,20 @@ var optionsrawjson = `
 }
 `
 var optionsjson = JSON.parse(optionsrawjson);
+
+
+// Stats
+var statsrawjson = `
+{
+    "今日" : 0,
+    "正解" : 0,
+    "不正解" : 0,
+    "合計" : 0,
+    "勉強日数" : 1,
+    "精度" : 0,
+    "日平均" : 0,
+    "連続" : 1,
+    "lastday" : "17/10/2024"
+}
+`
+var statsjson = JSON.parse(statsrawjson);
