@@ -14,13 +14,14 @@
     <link rel="stylesheet" href="assets/add.css">
     <link rel="stylesheet" href="assets/stats.css">
     <script defer src="wanakana.js"></script>
-    <script defer src="script.js"></script>
+    <script defer src="data.js"></script>
     <script defer src="game.js"></script>
     <script defer src="decks.js"></script>
     <script defer src="options.js"></script>
     <script defer src="manage.js"></script>
     <script defer src="add.js"></script>
     <script defer src="stats.js"></script>
+    <script defer src="save.js"></script>
     <title>WordGrind</title>
 </head>
 <body id="body">
@@ -80,9 +81,11 @@
             <div class="home-nav-container-2">
                 <a class="gen-link" href="https://github.com/RichardSepsi/WordGrind" draggable="false"><div class="button">GitHub<div class="button-small-image2"><img src="assets/arrow-right.svg" draggable="false"></div></div></a>
                 <div style="width: 40px;"></div>
-                <div class="button">使用方法<div class="button-small-image2"><img src="assets/arrow-right.svg" draggable="false"></div></div>
-                <div style="width: 40px;"></div>
+                <!--<div class="button">使用方法<div class="button-small-image2"><img src="assets/arrow-right.svg" draggable="false"></div></div>
+                <div style="width: 40px;"></div>-->
                 <a class="gen-link" href="https://www.sepsi.sk/wordgrind" draggable="false" id="portfolio-link"><div class="button">sepsi.sk<div class="button-small-image2"><img src="assets/arrow-right.svg" draggable="false"></div></div></a>
+                <div style="width: 40px;"></div>
+                <div class="button" onclick="globalsave()">保存する</div>
             </div>
         </div>
     </div>
