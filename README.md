@@ -36,8 +36,6 @@ You can then proceed onto another card by clicking the arrow next to the input o
 
 Exit the game using the "出る" button, otherwise your stats won't get updated.
 
-English version is not yet available, but might be in the future.
-
 
 ### Saving
 
