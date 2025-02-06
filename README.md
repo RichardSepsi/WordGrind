@@ -41,7 +41,7 @@ Exit the game using the "出る" button, otherwise your stats won't get updated.
 
 To save your data (decks, cards, stats) click the "保存する" button on the home screen. That will download a "data.js" file with all of your current data.
 Replace the "data.js" file in the website source files with the one you just downloaded and everything should be updated.
-I know it's not a great solution, but I could not come up with a better one for a local website.
+I know it's not a great solution, but I was not able to come up with a better one for a local website.
 
 
 ## Notes
